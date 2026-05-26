@@ -1,0 +1,25 @@
+# What it does: Defines known rental properties and source-specific aliases.
+# Target filename/service: Staylytics property configuration
+properties:
+  - slug: vaajalahti
+    name: "Vaajalahden yksiö"
+    city: Kuopio
+    active: true
+    active_from: "2020-04-24"
+    active_until:
+    source_aliases:
+      airbnb:
+        - "Vaajalahti Studio - Air-Conditioned Near Nature"
+      booking: []
+
+  - slug: simonsalo
+    name: "Simonsalo Serenity"
+    city: Siilinjärvi
+    active: true
+    active_from: "2025-06-16"
+    active_until:
+    source_aliases:
+      airbnb:
+        - "Simonsalo Serenity • Dux Beds, A/C & Parking"
+      booking: []
+
