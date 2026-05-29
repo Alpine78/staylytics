@@ -10,17 +10,21 @@ Staylytics is a local-first short-term rental analytics ETL project. The MVP imp
 
 The project is also a learning project. Do not generate large rewrites or complete subsystems unless explicitly requested.
 
+The repository starts as a skeleton. Planned MVP behavior in docs is not proof that the feature already exists. Verify local code before making claims.
+
 ## Working Rules
 
 - Read existing files before changing behavior.
 - Make the smallest reasonable change.
 - Keep implementation steps reviewable.
+- Prefer testable helper functions before larger pipeline code.
 - Prefer explicit Python over clever abstractions.
 - Do not invent Airbnb or Booking.com schemas. Use only documented headers and fixtures.
 - Keep raw customer data out of Git.
 - Do not store guest names, emails, phone numbers, IBANs, free-text notes, or complete raw CSV rows.
 - Use HMAC-SHA256 with `STAYLYTICS_HASH_SECRET` for source identifiers.
 - Keep frontend parsing out of scope. CSV parsing belongs in the backend/ETL layer.
+- Do not implement full CLI, import service, database persistence, and reports in one change.
 
 ## Documentation Sync
 
@@ -42,6 +46,17 @@ Included:
 - Direct booking CSV imports
 - Row-level idempotency
 - `monthly_revenue` and `platform_summary` reports
+
+Recommended implementation order:
+
+1. Money parsing helper
+2. Date parsing helpers
+3. HMAC identifier hashing
+4. Source header detection
+5. Property alias loading
+6. Initial SQLite schema
+7. `init-db` command
+8. First parser with synthetic fixtures
 
 Deferred:
 

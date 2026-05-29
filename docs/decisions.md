@@ -12,6 +12,8 @@ This file records the current project decisions. Keep it concise and update it w
 
 The MVP is local-first and CLI-first.
 
+The repository currently contains only the project skeleton, documentation, configuration, and early development scaffolding. The MVP behavior described below is the target state, not the current implementation state.
+
 Included:
 
 - CSV imports from Airbnb, Booking.com, and a custom direct booking format
@@ -43,9 +45,34 @@ Deferred:
 - ruff for linting and formatting
 - mypy is deferred
 
+Formatting:
+
+- Python uses 4-space indentation.
+- YAML, JSON, and Markdown use 2-space indentation.
+- `.editorconfig` defines editor defaults.
+- ruff formats Python code.
+
+## Development Order
+
+Implement the project one small tested piece at a time.
+
+Recommended order:
+
+1. Money parsing helper
+2. Date parsing helpers
+3. HMAC identifier hashing
+4. Source header detection
+5. Property alias loading
+6. Initial SQLite schema
+7. `init-db` command
+8. First source parser with synthetic fixtures
+
+Do not implement the full import service, database layer, and report layer in one change.
+
 ## Import Strategy
 
 - Imports start through CLI.
+- CLI commands are planned but not implemented in the initial skeleton.
 - Later FastAPI imports must call the same import service logic.
 - `--dry-run` validates and compares rows without writing to the database.
 - Airbnb property mapping uses `Listing`/`Kohde` aliases from `config/properties.yml`.

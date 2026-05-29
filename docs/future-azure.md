@@ -2,6 +2,8 @@
 
 Azure and Terraform are deferred until the local CLI MVP works.
 
+No Azure or Terraform code should be added while the project is still in the local skeleton and early ETL helper phase.
+
 ## Candidate Azure Architecture
 
 ```text
