@@ -4,6 +4,8 @@ The MVP is CLI-first. FastAPI is deferred until local imports and reports work.
 
 The future API should reuse the same import and report service logic as the CLI.
 
+No API code exists in the initial skeleton.
+
 ## Planned Principles
 
 - JSON responses

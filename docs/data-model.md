@@ -2,6 +2,8 @@
 
 Staylytics separates stays from financial transactions.
 
+This document describes the planned MVP data model. The database schema is not implemented in the initial skeleton.
+
 ## Core Tables
 
 ### properties
